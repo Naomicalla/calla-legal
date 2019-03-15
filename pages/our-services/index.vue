@@ -22,13 +22,6 @@
               <h3 v-if="bodies.header" :key="i">{{bodies.header}}</h3>
               <p v-if="bodies.copy" :key="bodies.copy[i]">{{bodies.copy}}</p>
             </template>
-            <template v-for="(plinks, i) in plink">
-              <p :key="plinks[i]">{{plinks.p_text}} 
-                <nuxt-link :to="{ path: plinks.link_href }" class="copyLink link--underline">
-                  {{plinks.link_copy}}
-                </nuxt-link>
-              </p>
-            </template>
           </div>
         </div>
       </div>
@@ -42,16 +35,16 @@ export default {
   components: {
   },
   asyncData(context) {
-    return context.app.$storyapi.get('cdn/stories/home', {
+    return context.app.$storyapi.get('cdn/stories/our-services', {
       version: 'draft'
     }).then(res => {
       return {
         blok: res.data.story.content,
         hero: res.data.story.content.hero[0],
+        header: res.data.story.content.header,
         body: res.data.story.content.body,
         title: res.data.story.content.pageTitle,
-        description: res.data.story.content.pageDescription,
-        plink: res.data.story.content.pLink
+        description: res.data.story.content.pageDescription
       }
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })

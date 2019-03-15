@@ -7,14 +7,20 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Calla Legal',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'A boutique law firm specializing in workplace investigations.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:600' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Merriweather:400,700' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
+    ],
+    script: [
     ]
   },
 
@@ -39,6 +45,10 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    ['storyblok-nuxt', {
+      accessToken: 'cH2zwiOKztdKBmYdWD6SWwtt',
+      cacheProvider: 'memory'
+    }]
   ],
 
   /*
