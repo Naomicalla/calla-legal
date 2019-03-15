@@ -1,8 +1,8 @@
 <template>
   <article class="news-item">
   <div class="module hero-story light-all has-image " data-visible="true" data-has-animated="true" data-position="in-viewport">
-    <div v-if="hero.image" class="module-background" 
-      :style="{ backgroundImage: 'url(' + hero.image + ')' }">
+    <div v-if="hero.heroImage" class="module-background" 
+      :style="{ backgroundImage: 'url(' + hero.heroImage + ')' }">
     </div>
     <div v-else class="module-background" 
       :style="{ backgroundColor: '#' + hero.heroBgColor }">
