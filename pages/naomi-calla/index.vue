@@ -47,9 +47,9 @@
             </template>
             <template v-for="(plinks, i) in plink">
               <p :key="plinks[i]">{{plinks.p_text}} 
-                <nuxt-link :to="{ path: plinks.link_href }" class="copyLink link--underline">
+                <a :href="plinks.link_href" target="_blank" class="copyLink link--underline">
                   {{plinks.link_copy}}
-                </nuxt-link>
+                </a>
               </p>
             </template>
           </div>
